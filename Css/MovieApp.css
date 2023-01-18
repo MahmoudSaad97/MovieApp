@@ -1,0 +1,150 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg-c:#373B69;
+  --movie-bgc:#708ED2;
+  --header-c:#333;
+  --info-c:#7bc9ef;
+  --place-holderc:#59598b;
+  --card-bgc:#292946;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  background-color:#0f0f0f;
+}
+
+header{
+  background-color:var(--header-c);
+  padding:20px;
+  text-align: center;
+}
+header .logo{
+  color:white;
+  font-size:25px;
+  cursor: pointer;
+  transition:0.5s;
+}
+header span{
+  font-weight: bold;
+  font-size: 30px;
+  color:var(--info-c);
+}
+
+header .logo:hover{
+  transform: translate(10px, 5px) scale(1.2);
+}
+
+.search{
+  text-align: center;
+}
+.search input{
+  background-color: transparent;
+  border: 1px solid #777;
+  width:70%;
+  padding:10px 20px;
+  border-radius:20px;
+  margin:20px 0; 
+  outline: none;
+  color:white;
+}
+
+
+main{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
+  gap:5px;
+}
+
+main .content {
+  padding:10px;
+  background-color:#222;
+  position: relative;
+  overflow: hidden;
+}
+
+main .content img{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  color:white;
+  font-size:30px;
+}
+
+main .content .info{
+  position: absolute;
+  bottom:-100px;
+  left:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:calc(100% );
+  padding:10px;
+  color:white;
+  background: -webkit-linear-gradient(#47565c, #222);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+main .content:hover .info{
+  bottom:0;
+  left:0;
+}
+main .content:hover img{
+  transform: scale(1.5);
+  cursor: pointer;
+}
+main .content .info h3{
+  font-weight: normal;
+  text-transform: capitalize;
+}
+main .content .info span{
+  background-color: var(--bg-c);
+  padding:5px;
+}
+main .content .info .green{
+  color:green;
+}
+main .content .info .red{
+  color:red;
+}
+main .content .info .orange{
+  color:orange;
+}
+
+
+.popub-overlay{
+  position: fixed;
+  background-color: rgba(0, 0, 0 , 0.3);
+  width:100%;
+  height: 100vh;
+  left:0;
+  top:0;
+  z-index: 1000;
+}
+
+.msg{
+  width:100%;
+  text-align: center;
+  color:white;
+  text-transform:capitalize;
+}
+
+.msg h3 {
+  font-size:40px;
+  background: -webkit-linear-gradient(#b5d3e1, #333);
+  --webkit-background-clip: text;
+  --webkit-text-fill-color: transparent;
+}
+
+@media (max-width:767px){
+  .msg h3{
+    font-size: 20px;
+  }
+}
