@@ -119,7 +119,10 @@ close.addEventListener('click', () => {
   popub.classList.remove('active');
   overlay.classList.remove('active');
 });
-
+overlay.addEventListener('click', () => {
+  popub.classList.remove('active');
+  overlay.classList.remove('active');
+});
 }
 
 
